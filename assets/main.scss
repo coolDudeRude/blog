@@ -1,0 +1,173 @@
+---
+---
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+
+// Variables must be set BEFORE importing minima
+$base-font-family: "JetBrains Mono", "Fira Code", ui-monospace, Menlo, Consolas, monospace;
+$base-font-size: 15px;
+$base-line-height: 1.7;
+$text-color: #c9d1d9; // soft off-white
+$background-color: #0d1117;
+$brand-color: #7ee787; // links / accent (terminal green)
+$grey-color: #8b949e;
+$grey-color-light: #30363d; // borders
+$grey-color-dark: #c9d1d9;
+
+@import "minima";
+
+:root {
+  color-scheme: dark;
+}
+
+::selection {
+  background: #264f78;
+  color: #fff;
+}
+
+// Header
+.site-header {
+  border-top: 0;
+  border-bottom: 1px dashed $grey-color-light;
+}
+
+.site-title,
+.site-title:visited {
+  color: $brand-color;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  &::before {
+    content: "$ ";
+    color: $grey-color;
+  }
+
+  &::after {
+    content: "\2588";
+    margin-left: 0.25em;
+    font-size: 0.8em;
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-title::after {
+    animation: none;
+  }
+}
+
+.post-list-heading {
+  color: $grey-color;
+  font-weight: 400;
+}
+
+.post-link {
+  font-weight: 700;
+}
+
+// Code blocks
+pre,
+code {
+  background: #161b22;
+  border: 1px solid $grey-color-light;
+  color: $text-color;
+}
+
+.highlighter-rouge .highlight,
+.highlight {
+  background: #161b22;
+}
+
+.highlight {
+
+  .c,
+  .cm,
+  .c1,
+  .cs {
+    color: #8b949e;
+    font-style: italic;
+  }
+
+  .k,
+  .kd,
+  .kn,
+  .kp,
+  .kr,
+  .kt,
+  .kc {
+    color: #ff7b72;
+  }
+
+  .s,
+  .s1,
+  .s2,
+  .sb,
+  .sc,
+  .sd,
+  .se,
+  .si,
+  .sx {
+    color: #a5d6ff;
+  }
+
+  .m,
+  .mi,
+  .mf,
+  .mh,
+  .mo,
+  .il {
+    color: #79c0ff;
+  }
+
+  .nf,
+  .nc,
+  .nn,
+  .nb {
+    color: #d2a8ff;
+  }
+
+  .o,
+  .ow {
+    color: #ff7b72;
+  }
+
+  .err {
+    color: #ffa198;
+    background: none;
+  }
+}
+
+// Images
+img {
+  border: 1px solid $grey-color-light;
+  border-radius: 4px;
+}
+
+figure {
+  margin: 1.5rem 0;
+}
+
+figcaption {
+  color: $grey-color;
+  font-size: 0.85em;
+  margin-top: 0.4rem;
+
+  &::before {
+    content: "// ";
+  }
+}
+
+img.small {
+  max-width: 50%;
+}

@@ -1,0 +1,12 @@
+title: 'cat /dev/urandom > blog'
+description: "No Idea what's happening here."
+theme: minima
+lang: en
+show_excerpts: true
+
+url: "https://coolduderude.github.io"
+baseurl: "/blog"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
