@@ -21,4 +21,6 @@ Behold, only two or three years late!
   <figcaption>Jail Break for Dummies!</figcaption>
 </figure>
 
+You can find it inside the map at `textures/vectorwars-misc/book-jb.png`.
+
 Download the map: [vectorwars-jb-beta2.pk3]({{ dir | append: '/vectorwars-jb-beta2.pk3' | relative_url }}) (13 MB)
