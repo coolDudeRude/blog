@@ -1,0 +1,47 @@
+baseURL = 'https://coolduderude.github.io/blog/'
+languageCode = 'en-us'
+theme = 'terminal'
+pagination.pagerSize = 5
+
+[permalinks.page]
+  posts = '/posts/:slug/'
+
+[markup.highlight]
+  noClasses = false
+  lineNos = false
+  lineNumbersinTable = false
+  guessSyntax = false
+
+[params]
+  contentType = 'posts'
+  showMenuItems = 2
+  fullWidthTheme = false
+  centerTheme = true
+  autoCover = true
+  readingTime = true
+  Toc = true
+  dateFormat = 'Jan 02, 2006'
+
+[languages.en]
+  languageName = 'English'
+  title = 'cat /dev/urandom > blog'
+  copyright = "Copyright (c) 2026 Jiān"
+
+  [languages.en.params]
+    subtitle = ''
+    readMore = 'Read more'
+    readOtherPosts = 'Read other posts'
+    newerPosts = 'Newer posts'
+    olderPosts = 'Older posts'
+    minuteReadingTime = 'min read'
+    words = 'words'
+
+    [languages.en.params.logo]
+      logoText = 'cat /dev/urandom > blog'
+      logoHomeLink = '/blog/'
+
+  [languages.en.menu]
+    [[languages.en.menu.main]]
+      identifier = 'rss'
+      name = 'RSS'
+      url = '/index.xml'

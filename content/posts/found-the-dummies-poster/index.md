@@ -1,7 +1,10 @@
 ---
-layout: post
 title: 'grep -r "dummies" ~/dlcache'
-tags: [xonotic, darkplaces, maps, minstagib]
+date: 2026-09-28
+aliases: ["/2026/09/28/found-the-dummies-poster.html"]
+tags: [maps, minstagib]
+slug: found-the-dummies-poster
+Toc: false
 ---
 
 Two or three years ago, ZeroTwo was working on a MinstaGib mod, and I
@@ -14,13 +17,8 @@ within it, the texture file for that book cover!
 
 Behold, only two or three years late!
 
-{% assign dir = '/assets/posts/' | append: page.slug %}
-
-<figure>
-  <img src="{{ dir | append: '/book-jb.png' | relative_url }}" alt="Front cover of the Jail Break for Dummies book" width="480">
-  <figcaption>Jail Break for Dummies!</figcaption>
-</figure>
+{{< figure src="book-jb.png" alt="Front cover of the Jail Break for Dummies book" caption="Jail Break for Dummies!" >}}
 
 You can find it inside the map at `textures/vectorwars-misc/book-jb.png`.
 
-Download the map: [vectorwars-jb-beta2.pk3]({{ dir | append: '/vectorwars-jb-beta2.pk3' | relative_url }}) (13 MB)
+Download the map: [vectorwars-jb-beta2.pk3](vectorwars-jb-beta2.pk3) (13 MB)

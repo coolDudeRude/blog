@@ -7,18 +7,15 @@ import sys
 from datetime import date
 from pathlib import Path
 
-# script lives in `_scripts/` so root is one dir above.
+# script lives in `scripts/` so root is one dir above.
 ROOT = Path(__file__).resolve().parent.parent
 
 TEMPLATE = """---
-layout: post
 title: '{title}'
+date: {date}
 tags: [{tags}]
+slug: {slug}
 ---
-
-Write the intro here. This first paragraph becomes the homepage excerpt.
-
-{{% assign dir = '/assets/posts/' | append: page.slug %}}
 
 """
 
@@ -47,8 +44,7 @@ def main() -> int:
         print("error: date must be YYYY-MM-DD", file=sys.stderr)
         return 1
 
-    post = ROOT / "_posts" / f"{args.date}-{slug}.md"
-    assets = ROOT / "assets" / "posts" / slug
+    post = ROOT / "content/posts" / slug / "index.md"
 
     if post.exists():
         print(f"error: {post.relative_to(ROOT)} already exists", file=sys.stderr)
@@ -58,14 +54,11 @@ def main() -> int:
     tags = ", ".join(slugify(t.lower()) for t in args.tags)
 
     post.parent.mkdir(exist_ok=True)
-    post.write_text(TEMPLATE.format(title=title, tags=tags), encoding="utf-8")
-
-    assets.mkdir(parents=True, exist_ok=True)
-
-    (assets / ".gitkeep").touch()
-
+    post.write_text(
+        TEMPLATE.format(title=title, tags=tags, date=args.date, slug=slug),
+        encoding="utf-8",
+    )
     print(f"created {post.relative_to(ROOT)}")
-    print(f"created {assets.relative_to(ROOT)}")
     return 0
 
 

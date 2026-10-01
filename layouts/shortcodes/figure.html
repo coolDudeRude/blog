@@ -1,0 +1,7 @@
+{{- $pos := .Get "position" | default "center" -}}
+<figure class="{{ $pos }}">
+  <img src="{{ .Get "src" }}"{{ with .Get "alt" }} alt="{{ . }}" {{ end }}>
+  {{- with .Get "caption" }}
+  <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end }}
+</figure>
